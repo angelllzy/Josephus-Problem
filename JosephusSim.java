@@ -24,6 +24,7 @@ public class JosephusSim {
             }
             tail = node;            // new node is the last person
             size++;
+            }
          }
          
          // make the ring circular by attaching last node's next to front
@@ -76,6 +77,7 @@ public class JosephusSim {
       } else {
          return false;
       }
+    }  
    
    public String toString() {
       // if there's only one person left, print them as the last survivor
@@ -91,10 +93,72 @@ public class JosephusSim {
          if (num > 1) {
             result += ", ";
          }
-         result =+ num + "-" + curr.name;
+         result += num + "-" + curr.name;
          curr = curr.next;
          num++;
       } while (curr != front);
       return result;
    }
 }
+
+/* Output:
+ ----jGRASP exec: java JosephusDriver
+=== Elimination count is 6 ===
+1-Ziru, 2-Marshall, 3-Sophie, 4-Mohamed, 5-Unumergen, 6-Anthony, 7-Angel, 8-Lukas, 9-Phoung, 10-Maharshi, 11-Mya, 12-Yunfeng
+
+Continue elimination? <press enter>
+
+Anthony eliminated!
+1-Angel, 2-Lukas, 3-Phoung, 4-Maharshi, 5-Mya, 6-Yunfeng, 7-Ziru, 8-Marshall, 9-Sophie, 10-Mohamed, 11-Unumergen
+
+Continue elimination? <press enter>
+
+Yunfeng eliminated!
+1-Ziru, 2-Marshall, 3-Sophie, 4-Mohamed, 5-Unumergen, 6-Angel, 7-Lukas, 8-Phoung, 9-Maharshi, 10-Mya
+
+Continue elimination? <press enter>
+
+Angel eliminated!
+1-Lukas, 2-Phoung, 3-Maharshi, 4-Mya, 5-Ziru, 6-Marshall, 7-Sophie, 8-Mohamed, 9-Unumergen
+
+Continue elimination? <press enter>
+
+Marshall eliminated!
+1-Sophie, 2-Mohamed, 3-Unumergen, 4-Lukas, 5-Phoung, 6-Maharshi, 7-Mya, 8-Ziru
+
+Continue elimination? <press enter>
+
+Maharshi eliminated!
+1-Mya, 2-Ziru, 3-Sophie, 4-Mohamed, 5-Unumergen, 6-Lukas, 7-Phoung
+
+Continue elimination? <press enter>
+
+Lukas eliminated!
+1-Phoung, 2-Mya, 3-Ziru, 4-Sophie, 5-Mohamed, 6-Unumergen
+
+Continue elimination? <press enter>
+
+Unumergen eliminated!
+1-Phoung, 2-Mya, 3-Ziru, 4-Sophie, 5-Mohamed
+
+Continue elimination? <press enter>
+
+Phoung eliminated!
+1-Mya, 2-Ziru, 3-Sophie, 4-Mohamed
+
+Continue elimination? <press enter>
+
+Ziru eliminated!
+1-Sophie, 2-Mohamed, 3-Mya
+
+Continue elimination? <press enter>
+
+Mya eliminated!
+1-Sophie, 2-Mohamed
+
+Continue elimination? <press enter>
+
+Mohamed eliminated!
+Sophie is the last survivor!
+
+ ----jGRASP: Operation complete. */
