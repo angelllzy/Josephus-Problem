@@ -61,8 +61,12 @@ public class JosephusSim {
       }
       
       // print who will be eliminated
+      System.out.println(curr.name + " eliminated!");
       
       // eliminate the person and update "front" of the circle and size
+      prev.next = curr.next;     // skip the eliminated person
+      front = curr.next;         // next round starts with the next person after them
+      size--;                    // size decreases
 
    }
    
