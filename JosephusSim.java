@@ -67,13 +67,15 @@ public class JosephusSim {
       prev.next = curr.next;     // skip the eliminated person
       front = curr.next;         // next round starts with the next person after them
       size--;                    // size decreases
-
    }
    
    public boolean isOver() {
       // check if there's only one person left in the circle
-      return false;
-   }
+      if (size == 1) {
+         return true;
+      } else {
+         return false;
+      }
    
    public String toString() {
       // if there's only one person left, print them as the last survivor
