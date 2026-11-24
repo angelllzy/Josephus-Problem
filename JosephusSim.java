@@ -16,8 +16,10 @@ public class JosephusSim {
          while (file.hasNextLine()) {
             String name = file.nextLine().trim();
             if (name.length() > 0) {
-               front = node;        // first person
-            } else {
+               PersonNode node = new PersonNode(name);
+               if (front == null) {
+                  front = node;     // first person
+               } else {
                tail.next = node;    // last person will get attached by the node
             }
             tail = node;            // new node is the last person
