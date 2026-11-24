@@ -79,10 +79,22 @@ public class JosephusSim {
    
    public String toString() {
       // if there's only one person left, print them as the last survivor
+      if (isOver()) {
+         return front.name + " is the last survivor!";
+      }
       
       // if many, print survivors (watch out for infinite loop since list is circular)
-
-      return "";
+      String result = "";
+      PersonNode curr = front;
+      int num = 1;
+      do {
+         if (num > 1) {
+            result += ", ";
+         }
+         result =+ num + "-" + curr.name;
+         curr = curr.next;
+         num++;
+      } while (curr != front);
+      return result;
    }
-
 }
