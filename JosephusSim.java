@@ -46,6 +46,19 @@ public class JosephusSim {
    
    public void eliminate() {
       // count to the elimination count
+      PersonNode prev = front;
+      for (int i = 1; i < size; i++) {
+         prev = prev.next;
+      }
+      
+      // counting starts from the first person
+      PersonNode curr = front;
+      
+      // move forward, keeping prev one node behind curr
+      for (int i = 1; i < eliminationCount; i++) {
+         prev = curr;            // prev becomes curr
+         curr = curr.next;       // curr becomes the next node in front
+      }
       
       // print who will be eliminated
       
